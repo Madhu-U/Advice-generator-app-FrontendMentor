@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  /* colors */
+  --clr-main: hsl(193, 38%, 86%);
+  --clr-accent: hsl(150, 100%, 66%);
+  --clr-cardbg: hsl(217, 19%, 24%);
+  --clr-mainbg: hsl(218, 23%, 16%);
+
+  /* typography */
+  --ff-main: "Manrope", sans-serif;
+  --fs-large: 1.75rem;
+  --fw-bold: 800;
+}
+
+body {
+  min-height: 100svh;
+  background: var(--clr-mainbg);
+  display: grid;
+  place-items: center;
+  color: var(--clr-main);
+  font-family: var(--ff-main);
+}
+
+.card {
+  background: var(--clr-cardbg);
+  padding: 50px;
+  border-radius: 1rem;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  max-width: 550px;
+  position: relative;
+
+  #advice-id {
+    color: var(--clr-accent);
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    letter-spacing: 4px;
+    font-size: 0.875rem;
+  }
+
+  #advice {
+    font-size: var(--fs-large);
+  }
+
+  .border {
+    margin-top: 1.5rem;
+  }
+
+  .dice {
+    position: absolute;
+    padding: 1.5rem;
+    background-color: var(--clr-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    bottom: -25px;
+  }
+  .dice:hover {
+    box-shadow: 0px 0px 25px var(--clr-accent);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+
+    #advice {
+      font-size: 1.5rem;
+    }
+  }
+}
